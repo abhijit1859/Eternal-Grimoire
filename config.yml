@@ -1,0 +1,14 @@
+database:
+  type: postgres
+  host: localhost
+  port: 5432
+  username: postgres
+  password: ""
+  database: auth-db
+
+storage:
+  enabled: false
+  type: s3
+  bucket: my-backup
+  region: us-west-2
+
