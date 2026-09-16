@@ -7,7 +7,7 @@ import (
 
 
 type StorageProvider interface{
-	Store(ctx context.Context,name string,data io.Reader)
-	Retrieve(ctx context.Context,name string) (io.ReadCloser,error)
-	List(ctx context.Context) ([]string,error)
+	Store(ctx context.Context,name string,data io.Reader) error
+	Retrieve(ctx context.Context,name string) (io.ReadCloser,error) 
+	List(ctx context.Context) ([]string,error) 
 }
