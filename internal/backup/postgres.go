@@ -20,14 +20,14 @@ func NewPostgresBackup(config config.DatabaseConfig) *PostgresBackup {
 }
 
 func (p *PostgresBackup) Backup(ctx context.Context, dst io.Writer) error {
-
+	fmt.Println("config name",p.config.Username)
 	//command to backup db
 	cmd := exec.CommandContext(ctx, "pg_dump",
 		"-h", p.config.Host,
 		"-p", fmt.Sprintf("%d", p.config.Port),
 		"-U", p.config.Username,
 		"-d", p.config.Database,
-		"-F", "c", // Use custom format
+		"-F", "c",  
 	)
 
 	cmd.Stdout = dst

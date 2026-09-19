@@ -4,27 +4,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
+	"github.com/abhijit1859/eternal_grimoire/cmd"
 )
 
 func main() {
 
-	var cli = &cobra.Command{
-		Use:   "Grimoire",
-		Short: "A backup database",
-	}
-
-	cli.AddCommand(&cobra.Command{
-		Use:   "backup",
-		Short: "Create a database backup",
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("Creating database backup...")
-		},
-	})
-
-	if err := cli.Execute(); err != nil {
-		fmt.Println(err)
+	if err:=cmd.Execute();err!=nil{
+		fmt.Println("Error:",err)
 		os.Exit(1)
 	}
-
 }

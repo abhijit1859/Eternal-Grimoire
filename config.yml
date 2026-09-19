@@ -1,14 +1,9 @@
 database:
-  type: postgres
   host: localhost
-  port: 5432
+  port: 5400
   username: postgres
-  password: ""
-  database: auth-db
+  password: postgres
+  database: grimoire_test
 
 storage:
-  enabled: false
-  type: s3
-  bucket: my-backup
-  region: us-west-2
-
+  path: backups

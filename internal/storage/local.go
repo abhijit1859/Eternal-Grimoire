@@ -12,7 +12,7 @@ type Localstorage struct {
 	dir string
 }
 
-func (ls *Localstorage) NewLocalStorage(dir string) *Localstorage {
+func NewLocalStorage(dir string) *Localstorage {
 	return &Localstorage{
 		dir: dir,
 	}
